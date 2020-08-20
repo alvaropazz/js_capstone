@@ -24,7 +24,8 @@ Microverse's JavaScript Capstone Project
 This project utilizes:
 
 - JavaScript
-//
+- Phaser
+- HTML
 
 ## Contributors
 
@@ -35,11 +36,11 @@ This project utilizes:
 
 <!-- MARKDOWN LINKS & IMAGES -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/alvaropazz/js-tictactoe.svg?style=flat-square
-[contributors-url]: https://github.com/alvaropazz/js-tictactoe/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/alvaropazz/js-tictactoe.svg?style=flat-square
-[forks-url]: https://github.com/alvaropazz/js-tictactoe/network/members
-[stars-shield]: https://img.shields.io/github/stars/alvaropazz/js-tictactoe.svg?style=flat-square
-[stars-url]: https://github.com/alvaropazz/js-tictactoe/stargazers
-[issues-shield]: https://img.shields.io/github/issues/alvaropazz/js-tictactoe.svg?style=flat-square
-[issues-url]: https://github.com/alvaropazz/js-tictactoe/issues
+[contributors-shield]: https://img.shields.io/github/contributors/alvaropazz/js_capstone.svg?style=flat-square
+[contributors-url]: https://github.com/alvaropazz/js_capstone/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/alvaropazz/js_capstone.svg?style=flat-square
+[forks-url]: https://github.com/alvaropazz/js_capstone/network/members
+[stars-shield]: https://img.shields.io/github/stars/alvaropazz/js_capstone.svg?style=flat-square
+[stars-url]: https://github.com/alvaropazz/js_capstone/stargazers
+[issues-shield]: https://img.shields.io/github/issues/alvaropazz/js_capstone.svg?style=flat-square
+[issues-url]: https://github.com/alvaropazz/js_capstone/issues
