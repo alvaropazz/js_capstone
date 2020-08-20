@@ -1,0 +1,31 @@
+{
+  "name": "js_capstone",
+  "version": "1.0.0",
+  "description": "JavaScript Phaser game",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alvaropazz/js_capstone.git"
+  },
+  "author": "alvaro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alvaropazz/js_capstone/issues"
+  },
+  "homepage": "https://github.com/alvaropazz/js_capstone#readme",
+  "devDependencies": {
+    "@babel/core": "^7.11.1",
+    "@babel/preset-env": "^7.11.0",
+    "babel-loader": "^8.1.0",
+    "copy-webpack-plugin": "^6.0.3",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "phaser": "^3.24.1"
+  }
+}
