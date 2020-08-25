@@ -36,30 +36,12 @@ function create() {
   camera.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
 
   cursors = this.input.keyboard.createCursorKeys();
-
-  // const camera = this.cameras.main;
-
-  // // Set up the arrows to control the camera
-  
-  // const cursors = this.input.keyboard.createCursorKeys();
-  
-  // controls = new Phaser.Cameras.Controls.FixedKeyControl({
-  //   camera: camera,
-  //   left: cursors.left,
-  //   right: cursors.right,
-  //   up: cursors.up,
-  //   down: cursors.down,
-  //   speed: 0.5
-  // });
-  // camera.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
-
+  this.physics.add.collider(player, secondLayer);
+  this.physics.add.collider(player, thirdLayer);
 }
 
 function update(time, delta) {
   const speed = 175;
-
-  // Apply the controls to the camera each update tick of the game
-   // Stop any previous movement from the last frame
    player.body.setVelocity(0);
 
    // Horizontal movement
