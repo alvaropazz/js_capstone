@@ -23,6 +23,8 @@ let enemy;
 let enemy2;
 let enemy3;
 let enemy4;
+let enemy5;
+let enemy6;
 let cursors;
 
  
@@ -35,7 +37,7 @@ function create() {
   player = this.physics.add.sprite(120,400, 'person')
   player.setDepth(1);
 
-  enemy = this.physics.add.sprite(160, 240, 'skeleton')
+  enemy = this.physics.add.sprite(160, 250, 'skeleton')
   enemy.setDepth(1);
 
   enemy2 = this.physics.add.sprite(560, 250, 'skeleton')
@@ -46,6 +48,12 @@ function create() {
 
   enemy4 = this.physics.add.sprite(624, 590, 'skeleton')
   enemy4.setDepth(1);
+
+  enemy5 = this.physics.add.sprite(190, 510, 'skeleton')
+  enemy5.setDepth(1);
+
+  enemy6 = this.physics.add.sprite(360, 510, 'skeleton')
+  enemy6.setDepth(1);
 
   const mainLayer = map.createStaticLayer('terrain', terrainTiles, 0, 0);
   const secondLayer = map.createStaticLayer('walls', obstacleTiles, 0, 0);
@@ -64,6 +72,11 @@ function create() {
   this.physics.add.collider(player, thirdLayer);
 
   this.physics.add.collider(player, enemy);
+  this.physics.add.collider(player, enemy2);
+  this.physics.add.collider(player, enemy3);
+  this.physics.add.collider(player, enemy4);
+  this.physics.add.collider(player, enemy5);
+  this.physics.add.collider(player, enemy6);
 
   this.tweens.add({
     targets: enemy,
@@ -99,6 +112,26 @@ function create() {
     targets: enemy4,
     x: 500,
     y:590,
+    ease: 'Linear',
+    duration: 3000,
+    repeat: -1,
+    yoyo: true
+  });
+
+  this.tweens.add({
+    targets: enemy5,
+    x: 300,
+    y:510,
+    ease: 'Linear',
+    duration: 3000,
+    repeat: -1,
+    yoyo: true
+  });
+
+  this.tweens.add({
+    targets: enemy6,
+    x: 430,
+    y:510,
     ease: 'Linear',
     duration: 3000,
     repeat: -1,
