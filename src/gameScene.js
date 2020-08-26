@@ -134,6 +134,32 @@ export default class GameScene extends Phaser.Scene {
       repeat: -1,
       yoyo: true
     });
+    //
+    this.physics.add.collider(player, enemy, () => {
+      this.physics.pause();
+      this.add.text(180, 250, 'Game Over', { fontSize: '15px', fill: '#000000' });
+    });
+    this.physics.add.collider(player, enemy2, () => {
+      this.physics.pause();
+      this.add.text(180, 250, 'Game Over', { fontSize: '15px', fill: '#000000' });
+    });
+    this.physics.add.collider(player, enemy3, () => {
+      this.physics.pause();
+      this.add.text(180, 250, 'Game Over', { fontSize: '15px', fill: '#000000' });
+    });
+    this.physics.add.collider(player, enemy4, () => {
+      this.physics.pause();
+      this.add.text(180, 250, 'Game Over', { fontSize: '15px', fill: '#000000' });
+    });
+    this.physics.add.collider(player, enemy5, () => {
+      this.physics.pause();
+      this.add.text(180, 250, 'Game Over', { fontSize: '15px', fill: '#000000' });
+    });
+    this.physics.add.collider(player, enemy6, () => {
+      this.physics.pause();
+      this.add.text(180, 250, 'Game Over', { fontSize: '15px', fill: '#000000' });
+    });
+    //
   }
   
  update() {
