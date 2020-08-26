@@ -9,11 +9,18 @@ Microverse's JavaScript Capstone Project
 
 ## About the project
 
-//
+This is the Microverse JavaScript Capstone Project. It uses the Phaser engine. 
+The task at hand is an RPG game. 
+
+![Image](./assets/game.gif)
 
 ## Features
 
-//
+- Multiple Screens
+- Leaderboard
+- Score system
+- Tiled map
+- Options menu
 
 ## Live Link
 
