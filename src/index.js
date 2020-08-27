@@ -11,6 +11,10 @@ import OptionsScene from './optionsScene';
 import CreditsScene from './creditsScene';
 import Model from './model';
 //
+import UserScene from './userScene';
+import LeaderboardScene from './leaderboardScene';
+// import 'regenerator-runtime';
+//
 
 class Game extends Phaser.Game {
   constructor() {
@@ -25,6 +29,9 @@ class Game extends Phaser.Game {
     this.scene.add('Title', TitleScene);
     this.scene.add('Options', OptionsScene);
     this.scene.add('Credits', CreditsScene);
+    //
+    this.scene.add('UserScene', UserScene);
+    this.scene.add('LeaderboardScene', LeaderboardScene);
     //
     this.scene.start('Boot');
   }

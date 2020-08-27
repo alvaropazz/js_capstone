@@ -224,9 +224,11 @@ export default class GameScene extends Phaser.Scene {
       this.physics.pause();
       this.add.text(320, 320, 'Game Over', { fontSize: '40px', fill: '#000000' });
       this.add.text(290, 370, 'Click to Restart', { fontSize: '30px', fill: '#000000' });
-      this.input.on('pointerup', () => {
-        this.scene.restart();
-      });
+      this.scene.start('LeaderboardScene');
+
+      // this.input.on('pointerup', () => {
+      //   this.scene.restart();
+      // });
     });
     this.physics.add.collider(player, enemy2, () => {
       this.physics.pause();
@@ -412,6 +414,8 @@ export default class GameScene extends Phaser.Scene {
       player.body.setVelocityY(speed);
     }
     player.body.velocity.normalize().scale(speed);
+
+    // score = this.sys.game.globals.score;
 
     if(score === 200){
       this.physics.pause();

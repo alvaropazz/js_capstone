@@ -18,4 +18,9 @@ export default {
       gravity: { y: 0 },
     },
   },
+  pixelArt: true,
+  roundPixels: true,
+  dom: {
+    createContainer: true,
+  },
 };

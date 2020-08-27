@@ -35,6 +35,8 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
-    "phaser": "^3.24.1"
+    "axios": "^0.20.0",
+    "phaser": "^3.24.1",
+    "regenerator-runtime": "^0.13.5"
   }
 }
