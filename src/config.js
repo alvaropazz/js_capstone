@@ -6,16 +6,16 @@ export default {
   height: 600,
   // width: 600,
   // height: 400,
-  parent: "game-container",
+  parent: 'game-container',
   // scene: {
   //   preload: preload,
   //   create: create,
   //   update: update
   // },
   physics: {
-    default: "arcade",
+    default: 'arcade',
     arcade: {
       gravity: { y: 0 },
-    }
-  }
+    },
+  },
 };

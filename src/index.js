@@ -1,7 +1,7 @@
 import 'phaser';
 import './styles.css';
 import config from './config';
-import GameScene from'./gameScene'
+import GameScene from './gameScene';
 
 //
 import BootScene from './bootScene';
@@ -9,11 +9,11 @@ import PreloaderScene from './preloaderScene';
 import TitleScene from './titleScene';
 import OptionsScene from './optionsScene';
 import CreditsScene from './creditsScene';
-import Model from './model'
+import Model from './model';
 //
 
 class Game extends Phaser.Game {
-  constructor () {
+  constructor() {
     super(config);
     this.scene.add('Game', GameScene);
     //
@@ -29,5 +29,5 @@ class Game extends Phaser.Game {
     this.scene.start('Boot');
   }
 }
- 
+
 window.game = new Game();
