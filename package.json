@@ -4,7 +4,8 @@
   "description": "JavaScript Phaser game",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "webpack -p --progress"
   },
   "repository": {
     "type": "git",

@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import Phaser from 'phaser';
 
 export default class UserScene extends Phaser.Scene {

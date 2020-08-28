@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import 'phaser';
 
 let player;

@@ -1,4 +1,7 @@
+/* eslint-disable */
+
 import { get, save } from '../src/objects/scoreFetch';
+
 jest.mock('../src/objects/scoreFetch');
 
 describe('Score Service tests', () => {
@@ -6,7 +9,7 @@ describe('Score Service tests', () => {
     data: {
       result: [
         { name: 'test1', score: 15 },
-        { name: 'test2', score: 30 }
+        { name: 'test2', score: 30 },
       ],
     },
   });
@@ -26,7 +29,7 @@ describe('Score Service tests', () => {
       data: {
         result: [
           { name: 'test1', score: 15 },
-          { name: 'test2', score: 30 }
+          { name: 'test2', score: 30 },
         ],
       },
     }));

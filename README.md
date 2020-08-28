@@ -34,6 +34,42 @@ This project utilizes:
 - Phaser
 - HTML
 
+### Getting Started
+
+To get a local copy up and running follow these simple example steps.
+
+### Prerequisites
+
+ * [Node.js](https://nodejs.org/) is required to install dependencies and run scripts via npm.
+ * A modern browser
+
+### Clone
+* [download](https://github.com/rammazzoti2000/js_capstone_rpg/archive/development.zip) or clone this repo:
+  - Clone with SSH:
+  ```
+    git@github.com:rammazzoti2000/js_capstone_rpg.git
+  ```
+  - Clone with HTTPS
+  ```
+    https://github.com/rammazzoti2000/js_capstone_rpg.git
+
+### Setup
+
+Install dependencies:
+
+```
+$ npm install
+```
+
+Start the local webserver:
+
+```$ npm start``` > will open a local webserver at http://localhost:8080/ directly in your default browser with the game ready to be played
+
+  ## Automated Test
+
+* Run the command and see the output:
+```$ npm run test```
+
 ## Contributors
 
 - Alvaro Paz

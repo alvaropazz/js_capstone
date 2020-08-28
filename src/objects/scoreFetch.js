@@ -28,13 +28,13 @@ function save(name, score) {
   axios.post(`${BASE}/${API_KEY}/scores`, {
     user: name,
     score,
-  })
-    // .then(response => {
-    //   console.log(response);
-    // })
-    // .catch(error => {
-    //   console.log(error.response);
-    // });
+  });
+  // .then(response => {
+  //   console.log(response);
+  // })
+  // .catch(error => {
+  //   console.log(error.response);
+  // });
 }
 
 const get = () => axios.get(`${BASE}/${API_KEY}/scores`);

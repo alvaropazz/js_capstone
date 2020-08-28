@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import 'phaser';
 
 export default class BootScene extends Phaser.Scene {

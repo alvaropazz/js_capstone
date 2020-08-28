@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import 'phaser';
 
 export default class OptionsScene extends Phaser.Scene {

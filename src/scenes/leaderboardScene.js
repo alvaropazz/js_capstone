@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import Phaser from 'phaser';
 import 'regenerator-runtime';
 import { get, save } from '../objects/scoreFetch';

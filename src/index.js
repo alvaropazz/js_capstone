@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import 'phaser';
 import './styles.css';
 import config from './objects/config';
