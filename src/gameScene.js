@@ -33,11 +33,10 @@ let cursors;
 
 let scoreText;
 
-let score = 0;
-
 export default class GameScene extends Phaser.Scene {
   constructor() {
     super('Game');
+    this.score = 0;
   }
 
   preload() {
@@ -113,10 +112,10 @@ export default class GameScene extends Phaser.Scene {
     coin12 = this.physics.add.sprite(760, 656, 'coins');
     coin12.setDepth(1);
 
-    coin13 = this.physics.add.sprite(176, 658,'coins');
+    coin13 = this.physics.add.sprite(176, 658, 'coins');
     coin13.setDepth(1);
 
-    coin14 = this.physics.add.sprite(208, 658,'coins');
+    coin14 = this.physics.add.sprite(208, 658, 'coins');
     coin14.setDepth(1);
 
     coin15 = this.physics.add.sprite(480, 688, 'coins');
@@ -136,7 +135,7 @@ export default class GameScene extends Phaser.Scene {
 
     coin20 = this.physics.add.sprite(432, 352, 'coins');
     coin20.setDepth(1);
-    
+
     const mainLayer = map.createStaticLayer('terrain', terrainTiles, 0, 0);
     const secondLayer = map.createStaticLayer('walls', obstacleTiles, 0, 0);
     const thirdLayer = map.createStaticLayer('decoration', decorTiles, 0, 0);
@@ -272,131 +271,134 @@ export default class GameScene extends Phaser.Scene {
     });
     // coins //
 
-    scoreText = this.add.text(400, 280, 'SCORE: 0', {font: '12px'});
+    scoreText = this.add.text(400, 280, 'SCORE: 0', { font: '12px' });
 
 
     this.physics.add.collider(player, coin, () => {
-      score += 10,
-      scoreText.setText(`SCORE: ${score}`),
-      coin.destroy()
+      this.score += 10,
+      scoreText.setText(`SCORE: ${this.score}`),
+      coin.destroy();
     });
 
     this.physics.add.collider(player, coin2, () => {
-      score += 10,
-      scoreText.setText(`SCORE: ${score}`),
-      coin2.destroy()
+      this.score += 10,
+      scoreText.setText(`SCORE: ${this.score}`),
+      coin2.destroy();
     });
 
     this.physics.add.collider(player, coin3, () => {
-      score += 10,
-      scoreText.setText(`SCORE: ${score}`),
-      coin3.destroy()
+      this.score += 10,
+      scoreText.setText(`SCORE: ${this.score}`),
+      coin3.destroy();
     });
 
     this.physics.add.collider(player, coin4, () => {
-      score += 10,
-      scoreText.setText(`SCORE: ${score}`),
-      coin4.destroy()
+      this.score += 10,
+      scoreText.setText(`SCORE: ${this.score}`),
+      coin4.destroy();
     });
-    
+
     this.physics.add.collider(player, coin5, () => {
-      score += 10,
-      scoreText.setText(`SCORE: ${score}`),
-      coin5.destroy()
+      this.score += 10,
+      scoreText.setText(`SCORE: ${this.score}`),
+      coin5.destroy();
     });
 
     this.physics.add.collider(player, coin6, () => {
-      score += 10,
-      scoreText.setText(`SCORE: ${score}`),
-      coin6.destroy()
+      this.score += 10,
+      scoreText.setText(`SCORE: ${this.score}`),
+      coin6.destroy();
     });
 
     this.physics.add.collider(player, coin7, () => {
-      score += 10,
-      scoreText.setText(`SCORE: ${score}`),
-      coin7.destroy()
+      this.score += 10,
+      scoreText.setText(`SCORE: ${this.score}`),
+      coin7.destroy();
     });
 
     this.physics.add.collider(player, coin8, () => {
-      score += 10,
-      scoreText.setText(`SCORE: ${score}`),
-      coin8.destroy()
+      this.score += 10,
+      scoreText.setText(`SCORE: ${this.score}`),
+      coin8.destroy();
     });
 
     this.physics.add.collider(player, coin9, () => {
-      score += 10,
-      scoreText.setText(`SCORE: ${score}`),
-      coin9.destroy()
+      this.score += 10,
+      scoreText.setText(`SCORE: ${this.score}`),
+      coin9.destroy();
     });
 
     this.physics.add.collider(player, coin10, () => {
-      score += 10,
-      scoreText.setText(`SCORE: ${score}`),
-      coin10.destroy()
+      this.score += 10,
+      scoreText.setText(`SCORE: ${this.score}`),
+      coin10.destroy();
     });
 
     this.physics.add.collider(player, coin11, () => {
-      score += 10,
-      scoreText.setText(`SCORE: ${score}`),
-      coin11.destroy()
+      this.score += 10,
+      scoreText.setText(`SCORE: ${this.score}`),
+      coin11.destroy();
     });
 
     this.physics.add.collider(player, coin12, () => {
-      score += 10,
-      scoreText.setText(`SCORE: ${score}`),
-      coin12.destroy()
+      this.score += 10,
+      scoreText.setText(`SCORE: ${this.score}`),
+      coin12.destroy();
     });
 
     this.physics.add.collider(player, coin13, () => {
-      score += 10,
-      scoreText.setText(`SCORE: ${score}`),
-      coin13.destroy()
+      this.score += 10,
+      scoreText.setText(`SCORE: ${this.score}`),
+      coin13.destroy();
     });
 
     this.physics.add.collider(player, coin14, () => {
-      score += 10,
-      scoreText.setText(`SCORE: ${score}`),
-      coin14.destroy()
+      this.score += 10,
+      scoreText.setText(`SCORE: ${this.score}`),
+      coin14.destroy();
     });
 
     this.physics.add.collider(player, coin15, () => {
-      score += 10,
-      scoreText.setText(`SCORE: ${score}`),
-      coin15.destroy()
+      this.score += 10,
+      scoreText.setText(`SCORE: ${this.score}`),
+      coin15.destroy();
     });
 
     this.physics.add.collider(player, coin16, () => {
-      score += 10,
-      scoreText.setText(`SCORE: ${score}`),
-      coin16.destroy()
+      this.score += 10,
+      scoreText.setText(`SCORE: ${this.score}`),
+      coin16.destroy();
     });
 
     this.physics.add.collider(player, coin17, () => {
-      score += 10,
-      scoreText.setText(`SCORE: ${score}`),
-      coin17.destroy()
+      this.score += 10,
+      scoreText.setText(`SCORE: ${this.score}`),
+      coin17.destroy();
     });
 
     this.physics.add.collider(player, coin18, () => {
-      score += 10,
-      scoreText.setText(`SCORE: ${score}`),
-      coin18.destroy()
+      this.score += 10,
+      scoreText.setText(`SCORE: ${this.score}`),
+      coin18.destroy();
     });
 
     this.physics.add.collider(player, coin19, () => {
-      score += 10,
-      scoreText.setText(`SCORE: ${score}`),
-      coin19.destroy()
+      this.score += 10,
+      scoreText.setText(`SCORE: ${this.score}`),
+      coin19.destroy();
     });
 
     this.physics.add.collider(player, coin20, () => {
-      score += 10,
-      scoreText.setText(`SCORE: ${score}`),
-      coin20.destroy()
+      this.score += 10,
+      scoreText.setText(`SCORE: ${this.score}`),
+      coin20.destroy();
     });
+
+    if (Number.isInteger(this.score)) {
+      this.sys.game.globals.score = this.score;
+    }
   }
 
-  
 
   update() {
     const speed = 175;
@@ -415,16 +417,14 @@ export default class GameScene extends Phaser.Scene {
     }
     player.body.velocity.normalize().scale(speed);
 
-    // score = this.sys.game.globals.score;
-
-    if(score === 200){
+    if (this.score === 200) {
       this.physics.pause();
       this.add.text(200, 320, 'Congrats! You\'ve won!', { fontSize: '40px', fill: '#000000' });
       this.add.text(290, 370, 'Click to Restart', { fontSize: '30px', fill: '#000000' });
       this.input.on('pointerup', () => {
         this.scene.restart();
       });
-      score = 0
+      this.score = 0;
     }
   }
 }

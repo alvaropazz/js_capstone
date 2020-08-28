@@ -1,21 +1,20 @@
 import Phaser from 'phaser';
 import Button from './button';
 import 'regenerator-runtime';
-import { getScores, saveScore } from './scoreFetch';
+import { get, save } from './scoreFetch';
+
 
 export default class LeaderboardScene extends Phaser.Scene {
   constructor() {
     super('LeaderboardScene');
   }
 
-  // async 
-  create() {
+  async create() {
     this.name = this.sys.game.globals.name;
-    this.score = this.sys.game.globals.score;
+    this.score = this.sys.game.globals.score.toString();
 
-    // await 
-    saveScore(this.name, this.score);
-    
 
+    console.log(this.name, this.score);
+    await save(this.name, this.score);
   }
 }

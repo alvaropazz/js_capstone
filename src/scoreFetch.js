@@ -2,8 +2,8 @@
 const axios = require('axios');
 
 // async function key() {
-//   const response = await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/', 
-//           {  
+//   const response = await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/',
+//           {
 //           method: "POST",
 //           headers: {
 //             Accept: "application/json",
@@ -20,11 +20,24 @@ const axios = require('axios');
 const API_KEY = '7i3ikDTXmldEyTz95yIC';
 const BASE = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games';
 
-const saveScore = (name, score) => axios.post(`${BASE}/${API_KEY}/scores`, {
-  user: name,
-  score: score,
-});
+function save (name, score){
+  console.log(name, score);
+  const data = new FormData();
+  data.append('user', name);
+  data.append('score', score);
 
-const getScores = () => axios.get(`${BASE}/${API_KEY}/scores`);
+  console.log(axios.post(`${BASE}/${API_KEY}/scores`, {
+    user: name,
+    score: score
+  })
+    .then(response => {
+      console.log(response);
+    })
+    .catch(error => {
+      console.log(error.response);
+    }));
+};
 
-export { saveScore, getScores };
+const get = () => axios.get(`${BASE}/${API_KEY}/scores`);
+
+export { save, get };

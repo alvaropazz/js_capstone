@@ -19,6 +19,7 @@ export default class UserScene extends Phaser.Scene {
     input.scaleX = 0.4;
     input.scaleY = 0.6;
 
+
     this.playButton = this.add.sprite(400, 500, 'blueButton1').setInteractive();
     this.playButtonText = this.add.text(360, 480, 'Play', { fontSize: '32px', fill: '#fff' });
 
