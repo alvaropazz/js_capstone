@@ -17,7 +17,7 @@ const axios = require('axios');
 // }
 // key().then(data=> console.log(data))
 
-const API_KEY = '7i3ikDTXmldEyTz95yIC';
+const API_KEY = 'YW3bviuS48OTujqz6y9m';
 const BASE = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games';
 
 function save (name, score){

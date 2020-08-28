@@ -30,7 +30,6 @@ let coin19;
 let coin20;
 let cursors;
 
-
 let scoreText;
 
 export default class GameScene extends Phaser.Scene {
@@ -221,7 +220,7 @@ export default class GameScene extends Phaser.Scene {
     //
     this.physics.add.collider(player, enemy, () => {
       this.physics.pause();
-      this.add.text(320, 320, 'Game Over', { fontSize: '40px', fill: '#000000' });
+      // this.add.text(320, 320, 'Game Over', { fontSize: '40px', fill: '#000000' });
       this.add.text(290, 370, 'Click to Restart', { fontSize: '30px', fill: '#000000' });
       this.scene.start('LeaderboardScene');
 
@@ -231,43 +230,33 @@ export default class GameScene extends Phaser.Scene {
     });
     this.physics.add.collider(player, enemy2, () => {
       this.physics.pause();
-      this.add.text(320, 320, 'Game Over', { fontSize: '40px', fill: '#000000' });
       this.add.text(290, 370, 'Click to Restart', { fontSize: '30px', fill: '#000000' });
-      this.input.on('pointerup', () => {
-        this.scene.restart();
-      });
+      this.scene.start('LeaderboardScene');
     });
+
     this.physics.add.collider(player, enemy3, () => {
       this.physics.pause();
-      this.add.text(320, 320, 'Game Over', { fontSize: '40px', fill: '#000000' });
       this.add.text(290, 370, 'Click to Restart', { fontSize: '30px', fill: '#000000' });
-      this.input.on('pointerup', () => {
-        this.scene.restart();
-      });
+      this.scene.start('LeaderboardScene');
+
     });
     this.physics.add.collider(player, enemy4, () => {
       this.physics.pause();
-      this.add.text(320, 320, 'Game Over', { fontSize: '40px', fill: '#000000' });
       this.add.text(290, 370, 'Click to Restart', { fontSize: '30px', fill: '#000000' });
-      this.input.on('pointerup', () => {
-        this.scene.restart();
-      });
+      this.scene.start('LeaderboardScene');
+
     });
     this.physics.add.collider(player, enemy5, () => {
       this.physics.pause();
-      this.add.text(320, 320, 'Game Over', { fontSize: '40px', fill: '#000000' });
       this.add.text(290, 370, 'Click to Restart', { fontSize: '30px', fill: '#000000' });
-      this.input.on('pointerup', () => {
-        this.scene.restart();
-      });
+      this.scene.start('LeaderboardScene');
+
     });
     this.physics.add.collider(player, enemy6, () => {
       this.physics.pause();
-      this.add.text(320, 320, 'Game Over', { fontSize: '40px', fill: '#000000' });
       this.add.text(290, 370, 'Click to Restart', { fontSize: '30px', fill: '#000000' });
-      this.input.on('pointerup', () => {
-        this.scene.restart();
-      });
+      this.scene.start('LeaderboardScene');
+
     });
     // coins //
 
@@ -393,10 +382,6 @@ export default class GameScene extends Phaser.Scene {
       scoreText.setText(`SCORE: ${this.score}`),
       coin20.destroy();
     });
-
-    if (Number.isInteger(this.score)) {
-      this.sys.game.globals.score = this.score;
-    }
   }
 
 
@@ -417,13 +402,17 @@ export default class GameScene extends Phaser.Scene {
     }
     player.body.velocity.normalize().scale(speed);
 
-    if (this.score === 200) {
+    this.sys.game.globals.score = this.score
+
+    if (this.score === 20) {
       this.physics.pause();
       this.add.text(200, 320, 'Congrats! You\'ve won!', { fontSize: '40px', fill: '#000000' });
-      this.add.text(290, 370, 'Click to Restart', { fontSize: '30px', fill: '#000000' });
-      this.input.on('pointerup', () => {
-        this.scene.restart();
-      });
+      this.scene.start('LeaderboardScene');
+
+      // this.add.text(290, 370, 'Click to Restart', { fontSize: '30px', fill: '#000000' });
+      // this.input.on('pointerup', () => {
+      //   this.scene.restart();
+      // });
       this.score = 0;
     }
   }

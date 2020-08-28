@@ -1,5 +1,4 @@
 import Phaser from 'phaser';
-// import Button from './button';
 
 export default class UserScene extends Phaser.Scene {
   constructor() {
@@ -26,7 +25,6 @@ export default class UserScene extends Phaser.Scene {
 
     this.playButton.on('pointerdown', (pointer) => {
       if (input.node.value) {
-        // this.model = this.sys.game.globals.model;
         this.sys.game.globals.name = input.node.value;
         this.scene.start('Game');
       }
