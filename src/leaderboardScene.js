@@ -19,45 +19,37 @@ export default class LeaderboardScene extends Phaser.Scene {
 
     list = (await get()).data.result;
 
-    let sortedList=[];
+    const sortedList = list.sort((a, b) => b.score - a.score);
 
-    for(let i=0; i < list.length;i++){
-      sortedList.push(list[i])
-    }
+    this.add.text(150, 250, 'GAME OVER', { fontSize: 30 });
+    this.add.text(450, 70, `YOU SCORED: ${this.score}`, { fontSize: 30 });
+    this.add.text(450, 130, 'LEADERBOARD', { fontSize: 30 });
 
-    function compare( a, b ) {
-      if ( a.score > b.score ){
-        return -1;
-      }
-      if ( a.score < b.score ){
-        return 1;
-      }
-      return 0;
-    }
-
-    sortedList.sort( compare )
-
-    this.add.text(100, 10, 'GAME OVER', { fontSize: 30});
-    this.add.text(100, 70, `YOU SCORED: ${this.score}`, { fontSize: 30});
-    this.add.text(100, 130, 'LEADERBOARD', { fontSize: 30});
-
-    for (let i = 0; i < 10; i += 1) {
+    for (let i = 0; i < 7; i += 1) {
       this.add.text(
-        100,
+        450,
         190 + i * 30,
         `${i + 1}.  ${sortedList[i].user}: ${sortedList[i].score}`,
         22,
       );
     }
 
-    this.gameButton = this.add.sprite(400, 520, 'blueButton1').setInteractive();
-    this.gameButtonText = this.add.text(360, 500, 'Play', { fontSize: '32px', fill: '#fff' });
+    this.gameButton = this.add.sprite(250, 520, 'blueButton1').setInteractive();
+    this.gameButtonText = this.add.text(210, 500, 'Play', { fontSize: '32px', fill: '#fff' });
 
 
     this.gameButton.on('pointerdown', (pointer) => {
-        this.score = 0;
-        this.scene.start('Game');
-      }
-    );
+      this.score = 0;
+      this.scene.start('Game');
+    });
+
+    this.menuButton = this.add.sprite(550, 520, 'blueButton1').setInteractive();
+    this.menuButtonText = this.add.text(510, 500, 'Menu', { fontSize: '32px', fill: '#fff' });
+
+
+    this.menuButton.on('pointerdown', (pointer) => {
+      this.score = 0;
+      this.scene.start('Title');
+    });
   }
 }

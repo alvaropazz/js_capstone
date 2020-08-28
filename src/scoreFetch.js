@@ -20,7 +20,7 @@ const axios = require('axios');
 const API_KEY = 'YW3bviuS48OTujqz6y9m';
 const BASE = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games';
 
-function save (name, score){
+function save(name, score) {
   console.log(name, score);
   const data = new FormData();
   data.append('user', name);
@@ -28,7 +28,7 @@ function save (name, score){
 
   console.log(axios.post(`${BASE}/${API_KEY}/scores`, {
     user: name,
-    score: score
+    score,
   })
     .then(response => {
       console.log(response);
@@ -36,7 +36,7 @@ function save (name, score){
     .catch(error => {
       console.log(error.response);
     }));
-};
+}
 
 const get = () => axios.get(`${BASE}/${API_KEY}/scores`);
 

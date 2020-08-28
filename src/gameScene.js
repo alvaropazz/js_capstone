@@ -238,25 +238,21 @@ export default class GameScene extends Phaser.Scene {
       this.physics.pause();
       this.add.text(290, 370, 'Click to Restart', { fontSize: '30px', fill: '#000000' });
       this.scene.start('LeaderboardScene');
-
     });
     this.physics.add.collider(player, enemy4, () => {
       this.physics.pause();
       this.add.text(290, 370, 'Click to Restart', { fontSize: '30px', fill: '#000000' });
       this.scene.start('LeaderboardScene');
-
     });
     this.physics.add.collider(player, enemy5, () => {
       this.physics.pause();
       this.add.text(290, 370, 'Click to Restart', { fontSize: '30px', fill: '#000000' });
       this.scene.start('LeaderboardScene');
-
     });
     this.physics.add.collider(player, enemy6, () => {
       this.physics.pause();
       this.add.text(290, 370, 'Click to Restart', { fontSize: '30px', fill: '#000000' });
       this.scene.start('LeaderboardScene');
-
     });
     // coins //
 
@@ -402,13 +398,12 @@ export default class GameScene extends Phaser.Scene {
     }
     player.body.velocity.normalize().scale(speed);
 
-    this.sys.game.globals.score = this.score
+    this.sys.game.globals.score = this.score;
 
-    if (this.score === 20) {
+    if (this.score === 200) {
       this.physics.pause();
-      this.add.text(200, 320, 'Congrats! You\'ve won!', { fontSize: '40px', fill: '#000000' });
+      // this.add.text(200, 320, 'Congrats! You\'ve won!', { fontSize: '40px', fill: '#000000' });
       this.scene.start('LeaderboardScene');
-
       // this.add.text(290, 370, 'Click to Restart', { fontSize: '30px', fill: '#000000' });
       // this.input.on('pointerup', () => {
       //   this.scene.restart();
