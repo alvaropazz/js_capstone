@@ -1,7 +1,6 @@
 import Phaser from 'phaser';
-import Button from './button';
 import 'regenerator-runtime';
-import { get, save } from './scoreFetch';
+import { get, save } from '../objects/scoreFetch';
 
 let list;
 

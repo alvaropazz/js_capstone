@@ -1,5 +1,4 @@
 import 'phaser';
-import config from './config';
 
 let player;
 let enemy;
@@ -39,13 +38,13 @@ export default class GameScene extends Phaser.Scene {
   }
 
   preload() {
-    this.load.image('world', './assets/Overworld.png');
-    this.load.image('obstacles', './assets/objects.png');
-    this.load.image('decorations', './assets/decoration.png');
-    this.load.tilemapTiledJSON('map', './assets/world.json');
-    this.load.spritesheet('person', './assets/character.png', { frameWidth: 16, frameHeight: 32 });
-    this.load.spritesheet('skeleton', './assets/skeleton.png', { frameWidth: 16, frameHeight: 32 });
-    this.load.spritesheet('coins', './assets/coins.png', { frameWidth: 16, frameHeight: 16 });
+    this.load.image('world', '../assets/Overworld.png');
+    this.load.image('obstacles', '../assets/objects.png');
+    this.load.image('decorations', '../assets/decoration.png');
+    this.load.tilemapTiledJSON('map', '../assets/world.json');
+    this.load.spritesheet('person', '../assets/character.png', { frameWidth: 16, frameHeight: 32 });
+    this.load.spritesheet('skeleton', '../assets/skeleton.png', { frameWidth: 16, frameHeight: 32 });
+    this.load.spritesheet('coins', '../assets/coins.png', { frameWidth: 16, frameHeight: 16 });
   }
 
   create() {

@@ -1,5 +1,5 @@
 import 'phaser';
-import config from './config';
+import config from '../objects/config';
 
 export default class TitleScene extends Phaser.Scene {
   constructor() {
