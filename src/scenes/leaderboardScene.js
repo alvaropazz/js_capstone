@@ -40,7 +40,7 @@ export default class LeaderboardScene extends Phaser.Scene {
 
 
     this.gameButton.on('pointerdown', (pointer) => {
-      this.sys.game.globals.score = 0;
+      this.score = 0;
       this.scene.start('Game');
     });
 
@@ -49,7 +49,7 @@ export default class LeaderboardScene extends Phaser.Scene {
 
 
     this.menuButton.on('pointerdown', (pointer) => {
-      this.sys.game.globals.score = 0;
+      this.score = 0;
       this.scene.start('Title');
     });
   }
