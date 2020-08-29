@@ -8,8 +8,6 @@ export default class OptionsScene extends Phaser.Scene {
   }
 
   create() {
-    // this.musicOn = true;
-    // this.soundOn = true;
 
     this.model = this.sys.game.globals.model;
 
@@ -17,23 +15,12 @@ export default class OptionsScene extends Phaser.Scene {
     this.musicButton = this.add.image(200, 200, 'checkedBox');
     this.musicText = this.add.text(250, 190, 'Music Enabled', { fontSize: 24 });
 
-    // this.soundButton = this.add.image(200, 300, 'checkedBox');
-    // this.soundText = this.add.text(250, 290, 'Sound Enabled', { fontSize: 24 });
-
     this.musicButton.setInteractive();
-    // this.soundButton.setInteractive();
 
     this.musicButton.on('pointerdown', () => {
-      // this.musicOn = !this.musicOn;
       this.model.musicOn = !this.model.musicOn;
       this.updateAudio();
     });
-
-    // this.soundButton.on('pointerdown', () => {
-    //   // this.soundOn = !this.soundOn;
-    //   this.model.soundOn = !this.model.soundOn;
-    //   this.updateAudio();
-    // });
 
     this.menuButton = this.add.sprite(400, 500, 'blueButton1').setInteractive();
     this.menuText = this.add.text(0, 0, 'Menu', { fontSize: '32px', fill: '#fff' });
@@ -58,11 +45,5 @@ export default class OptionsScene extends Phaser.Scene {
         this.model.bgMusicPlaying = true;
       }
     }
-
-    // if (this.model.soundOn === false) {
-    //   this.soundButton.setTexture('box');
-    // } else {
-    //   this.soundButton.setTexture('checkedBox');
-    // }
   }
 }

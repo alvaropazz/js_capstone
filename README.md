@@ -14,10 +14,16 @@ The task at hand is an RPG game.
 
 ![Image](./assets/game.gif)
 
-### Design Process
+## Design Process
 
 *Forest Man* design process started with the idea of creating a simple and beautiful RPG. The idea is inspired by traditional RPG classics like the Legend of Zelda and classic videogames like Pacman. 
 Thanks to the folks in [opengameart.org](https://opengameart.org/) I was able to find the collection of tiles, spritesheets for enemies and the main character and diffrent objects that are used throughout the game.
+
+## How to play
+
+The objective of the game is to collect all coins in the map.
+To move the main character a.k.a. 'Forest Man', you have to press the arrow keys in your keyboard.
+
 
 ## Features
 
