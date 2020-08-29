@@ -8,7 +8,7 @@ const save = (name, score) => {
     user: name,
     score,
   });
-}
+};
 
 const get = () => axios.get(`${BASE}/${API_KEY}/scores`);
 

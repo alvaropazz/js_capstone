@@ -5,12 +5,12 @@ const webpack = require('webpack');
 module.exports = {
   mode: 'development',
   entry: [
-    './src/index.js'
+    './src/index.js',
   ],
   output: {
     path: path.resolve(__dirname, 'build'),
     publicPath: 'build/',
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
 
   module: {
@@ -57,4 +57,4 @@ module.exports = {
       'typeof WEBGL_RENDERER': JSON.stringify(true),
     }),
   ],
-}
+};
