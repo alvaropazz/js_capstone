@@ -222,38 +222,32 @@ export default class GameScene extends Phaser.Scene {
     this.physics.add.collider(player, enemy, () => {
       this.physics.pause();
       this.add.text(290, 370, 'Click to Restart', { fontSize: '30px', fill: '#000000' });
-      this.score = 0;
       this.scene.start('LeaderboardScene');
     });
     this.physics.add.collider(player, enemy2, () => {
       this.physics.pause();
       this.add.text(290, 370, 'Click to Restart', { fontSize: '30px', fill: '#000000' });
-      this.score = 0;
       this.scene.start('LeaderboardScene');
     });
 
     this.physics.add.collider(player, enemy3, () => {
       this.physics.pause();
       this.add.text(290, 370, 'Click to Restart', { fontSize: '30px', fill: '#000000' });
-      this.score = 0;
       this.scene.start('LeaderboardScene');
     });
     this.physics.add.collider(player, enemy4, () => {
       this.physics.pause();
       this.add.text(290, 370, 'Click to Restart', { fontSize: '30px', fill: '#000000' });
-      this.score = 0;
       this.scene.start('LeaderboardScene');
     });
     this.physics.add.collider(player, enemy5, () => {
       this.physics.pause();
       this.add.text(290, 370, 'Click to Restart', { fontSize: '30px', fill: '#000000' });
-      this.score = 0;
       this.scene.start('LeaderboardScene');
     });
     this.physics.add.collider(player, enemy6, () => {
       this.physics.pause();
       this.add.text(290, 370, 'Click to Restart', { fontSize: '30px', fill: '#000000' });
-      this.score = 0;
       this.scene.start('LeaderboardScene');
     });
 
