@@ -11,7 +11,7 @@ module.exports = {
     path: path.resolve(__dirname, 'build'),
     publicPath: 'build/',
     filename: 'bundle.js'
-},
+  },
 
   module: {
     rules: [
@@ -57,4 +57,4 @@ module.exports = {
       'typeof WEBGL_RENDERER': JSON.stringify(true),
     }),
   ],
-};
+}
