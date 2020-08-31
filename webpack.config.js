@@ -4,13 +4,13 @@ const webpack = require('webpack');
 
 module.exports = {
   mode: 'development',
-  entry: {
-    app: './src/index.js'
-  },
-
+  entry: [
+    './src/index.js',
+  ],
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: 'app.bundle.js'
+    publicPath: 'build/',
+    filename: 'bundle.js',
   },
 
   module: {
@@ -21,11 +21,18 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/env']
-          }
-        }
-      }
-    ]
+            presets: ['@babel/env'],
+          },
+        },
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader',
+        ],
+      },
+    ],
   },
 
   devServer: {
@@ -37,17 +44,17 @@ module.exports = {
       patterns: [
         {
           from: path.resolve(__dirname, 'index.html'),
-          to: path.resolve(__dirname, 'build')
+          to: path.resolve(__dirname, 'build'),
         },
         {
           from: path.resolve(__dirname, 'assets', '**', '*'),
-          to: path.resolve(__dirname, 'build')
-        }
-      ]
+          to: path.resolve(__dirname, 'build'),
+        },
+      ],
     }),
     new webpack.DefinePlugin({
       'typeof CANVAS_RENDERER': JSON.stringify(true),
-      'typeof WEBGL_RENDERER': JSON.stringify(true)
-    })
-  ]
-}
+      'typeof WEBGL_RENDERER': JSON.stringify(true),
+    }),
+  ],
+};
