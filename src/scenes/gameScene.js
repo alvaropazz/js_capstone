@@ -2,7 +2,7 @@
 
 import 'phaser';
 
-let player;
+// let this.player;
 let enemy;
 let enemy2;
 let enemy3;
@@ -29,7 +29,7 @@ let coin17;
 let coin18;
 let coin19;
 let coin20;
-let cursors;
+// let cursors;
 
 let scoreText;
 
@@ -37,6 +37,7 @@ export default class GameScene extends Phaser.Scene {
   constructor() {
     super('Game');
     this.score = 0;
+    this.speed = 175;
   }
 
   preload() {
@@ -55,8 +56,8 @@ export default class GameScene extends Phaser.Scene {
     const obstacleTiles = map.addTilesetImage('objects', 'obstacles');
     const decorTiles = map.addTilesetImage('decoration', 'decorations');
 
-    player = this.physics.add.sprite(120, 400, 'person');
-    player.setDepth(1);
+    this.player = this.physics.add.sprite(120, 400, 'person');
+    this.player.setDepth(1);
 
     enemy = this.physics.add.sprite(160, 250, 'skeleton');
     enemy.setDepth(1);
@@ -144,20 +145,20 @@ export default class GameScene extends Phaser.Scene {
     thirdLayer.setCollisionByProperty({ collides: true });
 
     const camera = this.cameras.main;
-    camera.startFollow(player);
+    camera.startFollow(this.player);
     camera.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
 
-    cursors = this.input.keyboard.createCursorKeys();
+    this.cursors = this.input.keyboard.createCursorKeys();
 
-    this.physics.add.collider(player, secondLayer);
-    this.physics.add.collider(player, thirdLayer);
+    this.physics.add.collider(this.player, secondLayer);
+    this.physics.add.collider(this.player, thirdLayer);
 
-    this.physics.add.collider(player, enemy);
-    this.physics.add.collider(player, enemy2);
-    this.physics.add.collider(player, enemy3);
-    this.physics.add.collider(player, enemy4);
-    this.physics.add.collider(player, enemy5);
-    this.physics.add.collider(player, enemy6);
+    this.physics.add.collider(this.player, enemy);
+    this.physics.add.collider(this.player, enemy2);
+    this.physics.add.collider(this.player, enemy3);
+    this.physics.add.collider(this.player, enemy4);
+    this.physics.add.collider(this.player, enemy5);
+    this.physics.add.collider(this.player, enemy6);
 
     this.tweens.add({
       targets: enemy,
@@ -219,33 +220,33 @@ export default class GameScene extends Phaser.Scene {
       yoyo: true,
     });
     //
-    this.physics.add.collider(player, enemy, () => {
+    this.physics.add.collider(this.player, enemy, () => {
       this.physics.pause();
       this.add.text(290, 370, 'Click to Restart', { fontSize: '30px', fill: '#000000' });
       this.scene.start('LeaderboardScene');
     });
-    this.physics.add.collider(player, enemy2, () => {
+    this.physics.add.collider(this.player, enemy2, () => {
       this.physics.pause();
       this.add.text(290, 370, 'Click to Restart', { fontSize: '30px', fill: '#000000' });
       this.scene.start('LeaderboardScene');
     });
 
-    this.physics.add.collider(player, enemy3, () => {
+    this.physics.add.collider(this.player, enemy3, () => {
       this.physics.pause();
       this.add.text(290, 370, 'Click to Restart', { fontSize: '30px', fill: '#000000' });
       this.scene.start('LeaderboardScene');
     });
-    this.physics.add.collider(player, enemy4, () => {
+    this.physics.add.collider(this.player, enemy4, () => {
       this.physics.pause();
       this.add.text(290, 370, 'Click to Restart', { fontSize: '30px', fill: '#000000' });
       this.scene.start('LeaderboardScene');
     });
-    this.physics.add.collider(player, enemy5, () => {
+    this.physics.add.collider(this.player, enemy5, () => {
       this.physics.pause();
       this.add.text(290, 370, 'Click to Restart', { fontSize: '30px', fill: '#000000' });
       this.scene.start('LeaderboardScene');
     });
-    this.physics.add.collider(player, enemy6, () => {
+    this.physics.add.collider(this.player, enemy6, () => {
       this.physics.pause();
       this.add.text(290, 370, 'Click to Restart', { fontSize: '30px', fill: '#000000' });
       this.scene.start('LeaderboardScene');
@@ -253,145 +254,146 @@ export default class GameScene extends Phaser.Scene {
 
     scoreText = this.add.text(400, 280, 'SCORE: 0', { font: '12px' });
 
-    this.physics.add.collider(player, coin, () => {
+    this.physics.add.collider(this.player, coin, () => {
       this.score += 10,
       scoreText.setText(`SCORE: ${this.score}`),
       coin.destroy();
     });
 
-    this.physics.add.collider(player, coin2, () => {
+    this.physics.add.collider(this.player, coin2, () => {
       this.score += 10,
       scoreText.setText(`SCORE: ${this.score}`),
       coin2.destroy();
     });
 
-    this.physics.add.collider(player, coin3, () => {
+    this.physics.add.collider(this.player, coin3, () => {
       this.score += 10,
       scoreText.setText(`SCORE: ${this.score}`),
       coin3.destroy();
     });
 
-    this.physics.add.collider(player, coin4, () => {
+    this.physics.add.collider(this.player, coin4, () => {
       this.score += 10,
       scoreText.setText(`SCORE: ${this.score}`),
       coin4.destroy();
     });
 
-    this.physics.add.collider(player, coin5, () => {
+    this.physics.add.collider(this.player, coin5, () => {
       this.score += 10,
       scoreText.setText(`SCORE: ${this.score}`),
       coin5.destroy();
     });
 
-    this.physics.add.collider(player, coin6, () => {
+    this.physics.add.collider(this.player, coin6, () => {
       this.score += 10,
       scoreText.setText(`SCORE: ${this.score}`),
       coin6.destroy();
     });
 
-    this.physics.add.collider(player, coin7, () => {
+    this.physics.add.collider(this.player, coin7, () => {
       this.score += 10,
       scoreText.setText(`SCORE: ${this.score}`),
       coin7.destroy();
     });
 
-    this.physics.add.collider(player, coin8, () => {
+    this.physics.add.collider(this.player, coin8, () => {
       this.score += 10,
       scoreText.setText(`SCORE: ${this.score}`),
       coin8.destroy();
     });
 
-    this.physics.add.collider(player, coin9, () => {
+    this.physics.add.collider(this.player, coin9, () => {
       this.score += 10,
       scoreText.setText(`SCORE: ${this.score}`),
       coin9.destroy();
     });
 
-    this.physics.add.collider(player, coin10, () => {
+    this.physics.add.collider(this.player, coin10, () => {
       this.score += 10,
       scoreText.setText(`SCORE: ${this.score}`),
       coin10.destroy();
     });
 
-    this.physics.add.collider(player, coin11, () => {
+    this.physics.add.collider(this.player, coin11, () => {
       this.score += 10,
       scoreText.setText(`SCORE: ${this.score}`),
       coin11.destroy();
     });
 
-    this.physics.add.collider(player, coin12, () => {
+    this.physics.add.collider(this.player, coin12, () => {
       this.score += 10,
       scoreText.setText(`SCORE: ${this.score}`),
       coin12.destroy();
     });
 
-    this.physics.add.collider(player, coin13, () => {
+    this.physics.add.collider(this.player, coin13, () => {
       this.score += 10,
       scoreText.setText(`SCORE: ${this.score}`),
       coin13.destroy();
     });
 
-    this.physics.add.collider(player, coin14, () => {
+    this.physics.add.collider(this.player, coin14, () => {
       this.score += 10,
       scoreText.setText(`SCORE: ${this.score}`),
       coin14.destroy();
     });
 
-    this.physics.add.collider(player, coin15, () => {
+    this.physics.add.collider(this.player, coin15, () => {
       this.score += 10,
       scoreText.setText(`SCORE: ${this.score}`),
       coin15.destroy();
     });
 
-    this.physics.add.collider(player, coin16, () => {
+    this.physics.add.collider(this.player, coin16, () => {
       this.score += 10,
       scoreText.setText(`SCORE: ${this.score}`),
       coin16.destroy();
     });
 
-    this.physics.add.collider(player, coin17, () => {
+    this.physics.add.collider(this.player, coin17, () => {
       this.score += 10,
       scoreText.setText(`SCORE: ${this.score}`),
       coin17.destroy();
     });
 
-    this.physics.add.collider(player, coin18, () => {
+    this.physics.add.collider(this.player, coin18, () => {
       this.score += 10,
       scoreText.setText(`SCORE: ${this.score}`),
       coin18.destroy();
     });
 
-    this.physics.add.collider(player, coin19, () => {
+    this.physics.add.collider(this.player, coin19, () => {
       this.score += 10,
       scoreText.setText(`SCORE: ${this.score}`),
       coin19.destroy();
     });
 
-    this.physics.add.collider(player, coin20, () => {
+    this.physics.add.collider(this.player, coin20, () => {
       this.score += 10,
       scoreText.setText(`SCORE: ${this.score}`),
       coin20.destroy();
     });
   }
 
+  movePlayer() {
+    this.player.setVelocity(0);
+    if (this.cursors.left.isDown) {
+      this.player.setVelocityX(-this.speed);
+    } else if (this.cursors.right.isDown) {
+      this.player.setVelocityX(this.speed);
+    }
+
+    if (this.cursors.up.isDown) {
+      this.player.setVelocityY(-this.speed);
+    } else if (this.cursors.down.isDown) {
+      this.player.setVelocityY(this.speed);
+    }
+    // this.player.velocity.normalize().scale(this.speed);
+  }
 
   update() {
-    const speed = 175;
-    player.body.setVelocity(0);
-
-    if (cursors.left.isDown) {
-      player.body.setVelocityX(-speed);
-    } else if (cursors.right.isDown) {
-      player.body.setVelocityX(speed);
-    }
-
-    if (cursors.up.isDown) {
-      player.body.setVelocityY(-speed);
-    } else if (cursors.down.isDown) {
-      player.body.setVelocityY(speed);
-    }
-    player.body.velocity.normalize().scale(speed);
-
+    
+    this.movePlayer();
     this.sys.game.globals.score = this.score;
 
     if (this.score === 200) {
