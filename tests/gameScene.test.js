@@ -18,7 +18,7 @@ describe('movePlayer', () => {
       up: { isDown: false },
       down: { isDown: false },
     };
-    game.movePlayer()
+    game.movePlayer();
     expect(game.player.setVelocity).toHaveBeenCalledWith(0);
   });
 
@@ -34,7 +34,7 @@ describe('movePlayer', () => {
       up: { isDown: false },
       down: { isDown: false },
     };
-    game.movePlayer()
+    game.movePlayer();
     expect(game.player.setVelocityX).toHaveBeenCalledWith(-game.speed);
   });
 
@@ -50,7 +50,7 @@ describe('movePlayer', () => {
       up: { isDown: false },
       down: { isDown: false },
     };
-    game.movePlayer()
+    game.movePlayer();
     expect(game.player.setVelocityX).toHaveBeenCalledWith(game.speed);
   });
 
@@ -66,7 +66,7 @@ describe('movePlayer', () => {
       up: { isDown: true },
       down: { isDown: false },
     };
-    game.movePlayer()
+    game.movePlayer();
     expect(game.player.setVelocityY).toHaveBeenCalledWith(-game.speed);
   });
 
@@ -82,7 +82,7 @@ describe('movePlayer', () => {
       up: { isDown: false },
       down: { isDown: true },
     };
-    game.movePlayer()
+    game.movePlayer();
     expect(game.player.setVelocityY).toHaveBeenCalledWith(game.speed);
   });
 });
