@@ -2,7 +2,6 @@
 
 import 'phaser';
 
-// let this.player;
 let enemy;
 let enemy2;
 let enemy3;
@@ -29,7 +28,6 @@ let coin17;
 let coin18;
 let coin19;
 let coin20;
-// let cursors;
 
 let scoreText;
 
@@ -388,7 +386,6 @@ export default class GameScene extends Phaser.Scene {
     } else if (this.cursors.down.isDown) {
       this.player.setVelocityY(this.speed);
     }
-    // this.player.velocity.normalize().scale(this.speed);
   }
 
   update() {
